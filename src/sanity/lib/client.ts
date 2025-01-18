@@ -1,9 +1,10 @@
-import { createClient } from 'next-sanity';
-import { apiVersion, dataset, projectId } from '../env'; // Ensure this path is correct
+import { createClient } from 'next-sanity'
+
+import { apiVersion, dataset, projectId } from '../env'
 
 export const client = createClient({
-  projectId: projectId, // Make sure this value is correct
-  dataset: dataset,
-  apiVersion: apiVersion,
-  useCdn: true, // Optional: Set to false if you want real-time updates
-});
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+})
